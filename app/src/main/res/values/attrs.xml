@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TransparentCardView" >
+        <attr name="cardTopMargin" format="integer"/>
+        <attr name="cardWidth" format="integer"/>
+        <attr name="cardHeight" format="integer"/>
+        <attr name="cardRadiusInner" format="integer"/>
+        <attr name="cardRadiusOuter" format="integer"/>
+        <attr name="cardColor" format="integer"/>
+    </declare-styleable>
+</resources>
