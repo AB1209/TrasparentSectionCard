@@ -17,7 +17,11 @@ import android.view.View;
 import com.ab1209.transparentsectioncard.R;
 
 /**
- * Custom view, which masks the smaller video in circular. Has a card attached which can change it's length.
+ * Copyright (C) 2018 Arun Badole.
+ *
+ * Custom view, which uses different transparent shapes to create a beautiful view. In this particular rectangles & circles are used.
+ *
+ * @author arunbadole
  */
 public class TransparentCardView extends View {
 
@@ -124,18 +128,16 @@ public class TransparentCardView extends View {
     private Bitmap bitmapDraw() {
         Bitmap bitmap = Bitmap.createBitmap(cardWidth, cardHeight, Bitmap.Config.ARGB_8888);
         bitmap.eraseColor(Color.TRANSPARENT);
-        //Fill it with color
+
         Canvas canvasBitmap = new Canvas(bitmap);
         canvasBitmap.drawColor(getResources().getColor(cardColor));
+
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         paint.setStyle(Paint.Style.FILL);
-
-        paint.setColor(0xFFFFFFFF);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        //Erase color
+
         canvasBitmap.drawCircle(centerX, centerY, cardRadiusInner, paint);
 
-        //Draws a transparent rectangle
         RectF outerRectangle = new RectF(0, 0, cardWidth, transparentHeight);
         canvasBitmap.drawRect(outerRectangle, paint);
 
